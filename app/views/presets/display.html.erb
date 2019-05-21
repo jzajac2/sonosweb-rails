@@ -1,0 +1,152 @@
+
+<html>
+<head>
+      <meta charset="UTF-8">
+      <script>
+        function requestResource(resourcePath) {
+          if (window.location.host.includes("localhost")) {
+            console.log('in');
+            environmentUrl = "http://localhost:3000"
+          }
+          else {
+            environmentUrl = 'http://rpi3:3000'
+          }
+
+          var xobj = new XMLHttpRequest();
+          // true parameter denotes asynchronous
+          xobj.open('GET', environmentUrl + "/" + resourcePath, true);
+          xobj.onreadystatechange = function () {
+            if (xobj.readyState == 4 && xobj.status == "200") {
+              // This marks that the response has been successfully retrieved from the server
+              // Utilize callback
+              callback(xobj.responseText);
+            }
+          };
+          xobj.send(null);
+        }
+
+        function sayIt(environmentUrl) {
+          var sayWhat = document.getElementById('sayItInputTbProd').value;
+          resourceString = 'sayall' + '/' + sayWhat;
+          requestResource(resourceString)
+        }
+      </script>
+</head>
+<body>
+  <div>
+    <h1>Music Presets</h1>
+  </div>
+  <button hidden="true" type="button">TV Room</button>
+
+  <%= button_to "Currently Learning", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "currentlyLearning", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %> 
+  </br>
+  <%= button_to "Noise Therapy (Bedroom Only)", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "bedroom-only-noisetherapy", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %>
+  </br>
+  <%= button_to "Sleep (Bedroom Only)", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "bedroom-only-sleep", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %>
+  </br>
+  <%= button_to "Deep Focus", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "deepfocus", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %>
+  </br>
+  <%= button_to "Tron Legacy Soundtrack", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "tronlegacy", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %>
+  </br>
+  <%= button_to "Beats", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "beats", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %>                        
+  </br>
+  <%= button_to "Foo Fighters", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "foo-fighters", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %>                        
+ 
+  </br>
+  <%= button_to "Tonal Recall Set List", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "tonal-recall-set-list", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %>   
+  </br>
+  <%= button_to "Duran Duran", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "duran-duran", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %>   
+  </br>
+  <%= button_to "Coldplay", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "all-coldplay-albums", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %>   
+  </br>
+  <%= button_to "Flow", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "flow", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %> 
+  </br>
+ <%
+=begin%>
+ <%= link_to "Flow", :method => :get, :controller => "presets",
+                      :action => "play_preset", :preset_name => "flow", 
+                      :html_options => { :remote => true }, 
+                      form: { "data-type" => "json" } %> 
+<%
+=end%>
+
+  <div>
+    <h1>Input / Output Sources</h1>
+  </div>
+  <%= button_to "Office Computer Output (To All Rooms)", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "office-output", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %>
+  </br>
+  <%= button_to "Office Computer Output (To Office Room Only)", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "office-only-output", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %>
+  </br>
+  <%= button_to "TV Room Output (To All Rooms)", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "tvroom-output", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %> 
+  </br>
+  <%= button_to "TV Room Output (To TV Room Only)", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "tvroom-only-output", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %>
+  </br>
+  <%
+=begin%>
+ <%= button_to "Say It", :method => :get, :controller => "TextToSpeech",
+                        :action => "play_preset", :text_to_say => "inputTtsId", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %> 
+<%
+=end%>
+  </br> 
+  <div>
+    <h1>Say It!</h1>
+  </div>
+  
+  <%
+=begin%>
+ <%= text_field_tag "text_input", "Say it:" %>
+  <%= link_to "say" "TextToSpeech"%> 
+<%
+=end%>
+
+  <input id="sayItInputTbProd" type="text">
+  <button id="sayItBtnDev" type="submit" onclick="sayIt('http://localhost:5005')">Say it!</button>
+</body>
+</html>
