@@ -165,19 +165,27 @@
                         form: { "data-type" => "json" } %> 
 <%
 =end%>
-  </br> 
-  <div>
-    <h1>Say It!</h1>
-  </div>
-  
-  <%
+<%
 =begin%>
- <%= text_field_tag "text_input", "Say it:" %>
-  <%= link_to "say" "TextToSpeech"%> 
+ <div>
+  <h1>Say It!</h1>
+</div>
+  <%= form_tag({:controller=>"text_to_speech", :action=>"speak", :text_to_say => "testing"},
+                method: :get) do %>
+  <%= text_field_tag :text_to_say %>
+  <%= submit_tag 'Say it', :text_to_say => text_field_tag.value %>
+<% end %> 
 <%
 =end%>
+  
 
-  <input id="sayItInputTbProd" type="text">
-  <button id="sayItBtnDev" type="submit" onclick="sayIt('http://localhost:5005')">Say it!</button>
+
+  <%
+=begin%>
+ <input id="sayItInputBtn" type="text">
+
+  <button id="sayItBtn" type="submit" onclick="sayIt('http://localhost:5005')">Say it!</button> 
+<%
+=end%>
 </body>
 </html>

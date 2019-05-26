@@ -1,11 +1,11 @@
 class TextToSpeechController < ApplicationController
 
-  def say(text_to_say)
+  def speak(text_to_say)
 
-    say = params[:text_to_say]
+    speak_what = params[:text_to_say]
 
     begin
-      response = open("#{HOST}:#{PORT}/text_to_speech/#{}").read     
+      response = open("#{HOST}:#{PORT}/text_to_speech/#{speak_what}").read     
     rescue ActionController::UnknownFormat => e
       if e.include? '204'
         # do nothing
