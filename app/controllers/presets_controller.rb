@@ -13,6 +13,7 @@ class PresetsController < ApplicationController
 
   def play_preset
     name = params[:preset_name]
+    name = name.gsub!(' ', '%20')
     begin
       path = "#{HOST}:#{PORT}/preset/#{name}" 
       puts "path=#{path}"
