@@ -36,6 +36,11 @@
   <button hidden="true" type="button">TV Room</button>
   <div>
     <h1>Sonos Favorites (Presets)</h1>
+    <h3>To use Amazon Echo: speak "echo ask sonos to play preset {preset name}".
+        </br>
+        For available preset names/utterances see (although utterances are same as button name): 
+      <a href="http://jzajac2-ws2.asuscomm.com:5005/preset">presets names</a>
+    </h3>
   </div>
   <h2>Shuffles of All Albums by Artist</h2>
   <%= button_to "All Led Zeppelin Albums", :method => :get, :controller => "presets",
@@ -58,6 +63,11 @@
                         :html_options => { :remote => true }, 
                         form: { "data-type" => "json" } %>   
   </br>
+  <%= button_to "All Radiohead Albums", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "all radiohead albums", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %> 
+  </br>
   <%= button_to "All Depeche Mode Albums", :method => :get, :controller => "presets",
                         :action => "play_preset", :preset_name => "all depeche mode albums", 
                         :html_options => { :remote => true }, 
@@ -76,7 +86,7 @@
                         form: { "data-type" => "json" } %> 
   </br>
   <%= button_to "Solo Acoustic Learning", :method => :get, :controller => "presets",
-                        :action => "play_preset", :preset_name => "solo-acoustic-learning", 
+                        :action => "play_preset", :preset_name => "solo acoustic learning", 
                         :html_options => { :remote => true }, 
                         form: { "data-type" => "json" } %> 
   </br>
@@ -147,7 +157,7 @@
     <h1>Routine Presets</h1>
   </div>
   <%= button_to "Noise Therapy (Bedroom Only)", :method => :get, :controller => "presets",
-                        :action => "play_preset", :preset_name => "bedroom only noisetherapy", 
+                        :action => "play_preset", :preset_name => "bedroom only noise therapy", 
                         :html_options => { :remote => true }, 
                         form: { "data-type" => "json" }, :style => 'height:100%;width:100%'%>
   </br>
