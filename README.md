@@ -30,8 +30,8 @@ Things you may want to cover:
 1. scp -rp /Users/jzajac/code/git/personal/Projects/SonosWeb/node-sonos-http-api/  pi@192.168.1.26:/home/pi/code
 1. scp -rp /Users/jzajac/code/git/personal/Projects/SonosWeb/sonosweb-rails/ pi@192.168.1.26:/home/pi/code
 OR
-rsync -av /Users/jzajac/code/git/personal/Projects/SonosWeb/node-sonos-http-api/ pi@192.168.1.26/home/pi/code
-rsync -av /Users/jzajac/code/git/personal/Projects/SonosWeb/sonosweb-rails/ pi@192.168.1.26:/home/pi/code
+rsync -av /Users/jzajac/code/git/personal/Projects/SonosWeb/node-sonos-http-api/ pi@192.168.1.26/home/pi/code/node-sonos-http-api/
+rsync -avi /Users/jzajac/code/git/personal/Projects/SonosWeb/sonosweb-rails/ pi@192.168.1.26:/home/pi/code/sonosweb-rails/
 1. and same for sonosweb-rails
 
 1. 
