@@ -24,9 +24,13 @@ gem 'bootstrap', '~> 4.3.1'
 # jquery
 gem "jquery-rails"
 
-gem 'rest-client', '~> 1.8'
+gem 'rest-client', '~> 2.0', '>= 2.0.2'
 
 gem 'httparty'
+
+gem 'addressable'
+
+gem 'htmlentities', '~> 4.3', '>= 4.3.4'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
