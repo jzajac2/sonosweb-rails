@@ -16,7 +16,7 @@ class PresetsController < ApplicationController
     name = name.gsub!(' ', '%20')
     begin
       path = "#{HOST}:#{PORT}/preset/#{name}" 
-      response = open("#{HOST}:#{PORT}/preset/#{name}").read     
+      response = open(path).read     
     rescue ActionController::UnknownFormat => e
       if e.include? '204'
         # do nothing

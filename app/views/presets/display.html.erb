@@ -76,7 +76,11 @@
                         :action => "play_preset", :preset_name => "all foo fighters albums", 
                         :html_options => { :remote => true }, 
                         form: { "data-type" => "json" } %>                        
- 
+  </br>
+  <%= button_to "All Papercuts Albums", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "All Papercuts Albums", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %> 
   </br>
   <h2>Other Mixes</h2>
   <%= button_to "Currently Learning", :method => :get, :controller => "presets",
@@ -94,16 +98,16 @@
                         :html_options => { :remote => true }, 
                         form: { "data-type" => "json" } %>
   </br>
-  <%= button_to "Tron Legacy Soundtrack", :method => :get, :controller => "presets",
-                        :action => "play_preset", :preset_name => "tron legacy", 
+  <%= button_to "Daft Punk Tron Legacy", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "daft punk tron legacy", 
                         :html_options => { :remote => true }, 
                         form: { "data-type" => "json" } %>
   </br>
-  <%= button_to "Beats", :method => :get, :controller => "presets",
-                        :action => "play_preset", :preset_name => "beats", 
+  <%= button_to "Low Fidelity Beats", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "low fidelity beats", 
                         :html_options => { :remote => true }, 
                         form: { "data-type" => "json" } %>                        
-  </br>
+  </br> 
   <%= button_to "Tonal Recall All Repertoire", :method => :get, :controller => "presets",
                         :action => "play_preset", :preset_name => "tonal recall all repertoire", 
                         :html_options => { :remote => true }, 
@@ -113,41 +117,32 @@
                         :action => "play_preset", :preset_name => "tonal recall next show", 
                         :html_options => { :remote => true }, 
                         form: { "data-type" => "json" } %>   
-  </br>
-  <%= button_to "Flow", :method => :get, :controller => "presets",
-                        :action => "play_preset", :preset_name => "flow", 
-                        :html_options => { :remote => true }, 
-                        form: { "data-type" => "json" } %> 
-  </br>
- <%
-=begin%>
- <%= link_to "Flow", :method => :get, :controller => "presets",
-                      :action => "play_preset", :preset_name => "flow", 
-                      :html_options => { :remote => true }, 
-                      form: { "data-type" => "json" } %> 
-<%
-=end%>
 
-  <div>
-    <h1>Input / Output Sources</h1>
+    <div>
+    <h1>Books and Podcasts<h1>
   </div>
-  <%= button_to "Office Computer Output (To All Rooms)", :method => :get, :controller => "presets",
-                        :action => "play_preset", :preset_name => "office output", 
-                        :html_options => { :remote => true }, 
-                        form: { "data-type" => "json" } %>
-  </br>
-  <%= button_to "Office Computer Output (To Office Room Only)", :method => :get, :controller => "presets",
-                        :action => "play_preset", :preset_name => "office only output", 
-                        :html_options => { :remote => true }, 
-                        form: { "data-type" => "json" } %>
-  </br>
-  <%= button_to "TV Room Output (To All Rooms)", :method => :get, :controller => "presets",
-                        :action => "play_preset", :preset_name => "tvroom output", 
+  <%= button_to "Psycho Cybernetics Book", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "Psycho Cybernetics Book",
                         :html_options => { :remote => true }, 
                         form: { "data-type" => "json" } %> 
   </br>
-  <%= button_to "TV Room Output (To TV Room Only)", :method => :get, :controller => "presets",
-                        :action => "play_preset", :preset_name => "tvroom only output", 
+  <div> <h1>Input / Output Sources</h1> </div>
+  <%= button_to "Office Computer Output", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "office computer output", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %>
+  </br>
+  <%= button_to "Office Computer Output Only", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "office computer output only", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %> </br>
+  <%= button_to "TV Room Output", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "tv room output", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %> 
+  </br>
+  <%= button_to "TV Room Output Only", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "tv room output only", 
                         :html_options => { :remote => true }, 
                         form: { "data-type" => "json" } %>
   </br>
@@ -155,13 +150,13 @@
    <div>
     <h1>Routine Presets</h1>
   </div>
-  <%= button_to "Noise Therapy (Bedroom Only)", :method => :get, :controller => "presets",
-                        :action => "play_preset", :preset_name => "bedroom only noise therapy", 
+  <%= button_to "Noise Therapy Bedroom Only", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "noise therapy bedroom only", 
                         :html_options => { :remote => true }, 
                         form: { "data-type" => "json" }, :style => 'height:100%;width:100%'%>
   </br>
-  <%= button_to "Sleep (Bedroom Only)", :method => :get, :controller => "presets",
-                        :action => "play_preset", :preset_name => "bedroom only sleep", 
+  <%= button_to "Sleep Music Bedroom Only", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "sleep music bedroom only", 
                         :html_options => { :remote => true }, 
                         form: { "data-type" => "json" } %>
   </br>
