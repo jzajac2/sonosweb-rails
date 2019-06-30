@@ -11,7 +11,7 @@ APP_DIR_LOCAL=.
 
 #mkdir -p $(dirname $APP_DIR_SVR)
 
-rsync --archive --verbose --delete --exclude 'bundle/' --exclude 'node_modules/' $APP_DIR_LOCAL $APP_SVR:$APP_DIR_SVR
+rsync --archive --verbose --delete --exclude 'node_modules/' $APP_DIR_LOCAL $APP_SVR:$APP_DIR_SVR
 
 
 # Note: will be run on boot as a systemd service and hot load

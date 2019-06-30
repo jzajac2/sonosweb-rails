@@ -16,11 +16,13 @@ class PresetsController < ApplicationController
     name = name.gsub!(' ', '%20')
     begin
       path = "#{HOST}:#{PORT}/preset/#{name}" 
+      logger.debug "calling preset #{name} with: path=#{path}"
       response = open(path).read     
     rescue ActionController::UnknownFormat => e
       if e.include? '204'
         # do nothing
       else
+        logger.debug "Exception in presets_controller: #{e.to_s}"
         raise e
       end
     end
