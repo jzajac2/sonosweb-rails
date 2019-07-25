@@ -32,7 +32,8 @@ gem 'addressable'
 
 gem 'htmlentities', '~> 4.3', '>= 4.3.4'
 
-gem "e20_ops_middleware", :require => "e20/ops/middleware"
+# gem 'e20_ops_middleware', '2.1'
+gem "e20_ops_middleware", '2.1', :require => "e20/ops/middleware"
 
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

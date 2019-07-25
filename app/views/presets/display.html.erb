@@ -47,6 +47,16 @@
                         :html_options => { :remote => true }, 
                         form: { "data-type" => "json" } %>   
   </br>
+  <%= button_to "All Prince Albums", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "all prince albums", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %>   
+  </br>
+  <%= button_to "All Chris Isaak Albums", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "all mogwai albums", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %>   
+  </br>
   <%= button_to "All Duran Duran Albums", :method => :get, :controller => "presets",
                         :action => "play_preset", :preset_name => "all duran duran albums", 
                         :html_options => { :remote => true }, 

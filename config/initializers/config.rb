@@ -1,0 +1,1 @@
+MAIN_CONFIG = Rails.application.config_for(:main_config)

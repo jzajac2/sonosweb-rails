@@ -5,8 +5,11 @@ require 'open-uri'
 
 class PresetsController < ApplicationController
 
+  # whoops - is this working??? no...
   HOST = 'http://192.168.1.26'.freeze
   PORT = '5005'.freeze # port of the sonos node api service
+  # HOST = MAIN_CONFIG['host']
+  # PORT = MAIN_CONFIG['port']
 
   def display
   end
