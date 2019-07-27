@@ -35,17 +35,22 @@
 <body>
   <div>
     <h1>Sonos Favorites (aka Presets)</h1>
-    <h3>To use with Amazon Echo: say "echo ask sonos to play preset {preset name}"
+    <h3>To use with Amazon Echo: say "alexa ask sonos to play preset {preset name}"
         </br>
         For available preset names/utterances see (although utterances are same as button name): 
       <a href="http://jzajac2-ws2.asuscomm.com:5005/preset">presets names</a>
     </h3>
   </div>
   <h2>Shuffles of All Albums by Artist</h2>
+  <%= button_to "All The Monkees Albums", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "all the monkees albums", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %>   
+  </br>
   <%= button_to "All Led Zeppelin Albums", :method => :get, :controller => "presets",
                         :action => "play_preset", :preset_name => "all led zeppelin albums", 
                         :html_options => { :remote => true }, 
-                        form: { "data-type" => "json" } %>   
+                        form: { "data-type" => "json" } %> 
   </br>
   <%= button_to "All Prince Albums", :method => :get, :controller => "presets",
                         :action => "play_preset", :preset_name => "all prince albums", 
@@ -88,7 +93,7 @@
                         form: { "data-type" => "json" } %>                        
   </br>
   <%= button_to "All Papercuts Albums", :method => :get, :controller => "presets",
-                        :action => "play_preset", :preset_name => "All Papercuts Albums", 
+                        :action => "play_preset", :preset_name => "all papercuts albums", 
                         :html_options => { :remote => true }, 
                         form: { "data-type" => "json" } %> 
   </br>
