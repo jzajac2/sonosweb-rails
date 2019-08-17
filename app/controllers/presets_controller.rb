@@ -4,6 +4,7 @@ require 'httparty'
 require 'open-uri'
 
 class PresetsController < ApplicationController
+  before_action :authenticate_user!
 
   # whoops - is this working??? no...
   HOST = 'http://192.168.1.26'.freeze
@@ -15,6 +16,7 @@ class PresetsController < ApplicationController
   end
 
   def play_preset
+    if params[:preset_name].nil? then return end
     name = params[:preset_name]
     name = name.gsub!(' ', '%20')
     begin

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :users
   get 'text_to_speech/say'
   root 'presets#display'
   get 'presets', to: 'presets#play_preset'
