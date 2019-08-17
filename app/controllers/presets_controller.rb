@@ -2,11 +2,14 @@ require 'net/http'
 require 'rest-client'
 require 'httparty'
 require 'open-uri'
+include ApplicationHelper
 
 class PresetsController < ApplicationController
 
   # whoops - is this working??? no...
-  HOST = 'http://192.168.1.26'.freeze
+  ip = ApplicationHelper.local_ip
+  HOST = "http://#{ip}"
+  logger.debug "HOST=#{HOST.to_s}"
   PORT = '5005'.freeze # port of the sonos node api service
   # HOST = MAIN_CONFIG['host']
   # PORT = MAIN_CONFIG['port']

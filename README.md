@@ -24,8 +24,9 @@ Things you may want to cover:
 1. In Preferences:
 1. Change hostname to something unique and short e.g. rpi4
 1. Enable Network, Boot and Auto login, SSH, and VNC
-1. Make it a static IP via router or ifconfig
+1. Make it a static IP via router and /etc/dhcpcd.conf
 1. enable ssh
+1. install ruby and rails: https://parsun.com/2017/09/23/how-to-install-ruby-on-rails-on-raspberry-pi-3/
 1. create /home/pi/code/<appname> directory
 1. scp -rp /Users/jzajac/code/git/personal/Projects/SonosWeb/node-sonos-http-api/  pi@192.168.1.26:/home/pi/code
 1. scp -rp /Users/jzajac/code/git/personal/Projects/SonosWeb/sonosweb-rails/ pi@192.168.1.26:/home/pi/code
@@ -90,3 +91,8 @@ exit 0
 * Troubleshooting
 1. make sure the DDNS on router is set and works: http://jzajac2-ws2.asuscomm.com:5005/zones
 
+
+* TODO:
+1. https://aws.amazon.com/blogs/mt/manage-raspberry-pi-devices-using-aws-systems-manager/
+
+1. health checks on {hostname:port} with status controller endpoint - get the ops middleware working with that
