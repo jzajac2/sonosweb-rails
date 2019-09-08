@@ -43,8 +43,6 @@
   </div>
   <h2>Shuffles of All Albums by Artist</h2>
 
-  <% buttons = >
-
   <%= button_to "All The Monkees Albums", :method => :get, :controller => "presets",
                         :action => "play_preset", :preset_name => "all the monkees albums", 
                         :html_options => { :remote => true }, 

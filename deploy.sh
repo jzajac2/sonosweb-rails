@@ -2,13 +2,13 @@
 
 if [ "$1" == "development" ]; then
     echo "Positional parameter 1 contains development"
-    APP_SVR=pi@192.168.1.25
+    APP_SVR=pi@192.168.1.26
 elif [ "$1" == "production" ]; then
     echo "Positional parameter 1 contains production"
-    APP_SVR=pi@192.168.1.26
+    APP_SVR=pi@192.168.1.25
 else
   # Default to development
-  APP_SVR=pi@192.168.1.25
+  APP_SVR=pi@192.168.1.26
 fi
 
 set -eu
