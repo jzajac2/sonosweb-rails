@@ -32,6 +32,7 @@ Things you may want to cover:
 1. scp -rp /Users/jzajac/code/git/personal/Projects/SonosWeb/sonosweb-rails/ pi@192.168.1.26:/home/pi/code
 OR
 rsync -av /Users/jzajac/code/git/personal/Projects/SonosWeb/node-sonos-http-api/ pi@192.168.1.26:/home/pi/code/node-sonos-http-api/
+1. start up with: `setsid npm start > /dev/null 2>&1 &`
 
 
 
@@ -39,7 +40,7 @@ rsync -av /Users/jzajac/code/git/personal/Projects/SonosWeb/node-sonos-http-api/
 rsync -avi /Users/jzajac/code/git/personal/Projects/SonosWeb/sonosweb-rails/ pi@192.168.1.26:/home/pi/code/sonosweb-rails/
 or maybe
 rsync --archive --quiet --delete --exclude 'bundle/' --exclude 'node_modules/' .
-1. start up as background with: nohup rails s --binding=0.0.0.0 > /dev/null 2>&1 &
+1. start up as background with: `setsid rails s --binding=0.0.0.0 > /dev/null 2>&1 &` 
 todo: need to set up logging system
 
 - For nodejs
