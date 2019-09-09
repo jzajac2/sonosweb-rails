@@ -5,6 +5,7 @@ require 'open-uri'
 include ApplicationHelper
 
 class PresetsController < ApplicationController
+  before_action :authenticate_user!
 
   # whoops - is this working??? no...
   ip = ApplicationHelper.local_ip
@@ -18,6 +19,7 @@ class PresetsController < ApplicationController
   end
 
   def play_preset
+    if params[:preset_name].nil? then return end
     name = params[:preset_name]
     name = name.gsub!(' ', '%20')
     begin

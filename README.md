@@ -25,13 +25,26 @@ Things you may want to cover:
 1. Change hostname to something unique and short e.g. rpi4
 1. Enable Network, Boot and Auto login, SSH, and VNC
 1. Make it a static IP via router and /etc/dhcpcd.conf
-1. enable ssh
+1. Enable ssh
+1. `sudo apt update`
+1. `sudo apt full-upgrade -y`
+1. Install npm and node: `sudo apt install nodejs`
+1. Install nvm: `wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash`
+   Note: node-sonos-http-api requires node 4.0.0 or higher! This should now work on Node 6+, please let me know if you have issues
+1. Sure just install latest: `npm install -g npm@latest`
 1. install ruby and rails: https://parsun.com/2017/09/23/how-to-install-ruby-on-rails-on-raspberry-pi-3/
+1. install postgres: `sudo apt install postgresql libpq-dev postgresql-client`
+`postgresql-client-common -y`
+1. create postgres db user: `sudo su postgres`
+`createuser pi -P --interactive` and when prompted, enter a password (and remember what it is), select n for superuser, and y for the next two questions.
+1. Create the db: `bundle exec rake db:create`
+1. Migrate the db: `bundle exec rake db:migrate` 
 1. create /home/pi/code/<appname> directory
 1. scp -rp /Users/jzajac/code/git/personal/Projects/SonosWeb/node-sonos-http-api/  pi@192.168.1.26:/home/pi/code
 1. scp -rp /Users/jzajac/code/git/personal/Projects/SonosWeb/sonosweb-rails/ pi@192.168.1.26:/home/pi/code
 OR
 rsync -av /Users/jzajac/code/git/personal/Projects/SonosWeb/node-sonos-http-api/ pi@192.168.1.26:/home/pi/code/node-sonos-http-api/
+1. start up with: `setsid npm start > /dev/null 2>&1 &`
 
 
 
@@ -39,7 +52,7 @@ rsync -av /Users/jzajac/code/git/personal/Projects/SonosWeb/node-sonos-http-api/
 rsync -avi /Users/jzajac/code/git/personal/Projects/SonosWeb/sonosweb-rails/ pi@192.168.1.26:/home/pi/code/sonosweb-rails/
 or maybe
 rsync --archive --quiet --delete --exclude 'bundle/' --exclude 'node_modules/' .
-1. start up as background with: nohup rails s --binding=0.0.0.0 > /dev/null 2>&1 &
+1. start up as background with: `setsid rails s --binding=0.0.0.0 > /dev/null 2>&1 &` 
 todo: need to set up logging system
 
 - For nodejs

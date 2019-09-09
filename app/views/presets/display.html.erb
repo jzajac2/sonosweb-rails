@@ -42,6 +42,7 @@
     </h3>
   </div>
   <h2>Shuffles of All Albums by Artist</h2>
+
   <%= button_to "All The Monkees Albums", :method => :get, :controller => "presets",
                         :action => "play_preset", :preset_name => "all the monkees albums", 
                         :html_options => { :remote => true }, 
@@ -122,6 +123,11 @@
                         :action => "play_preset", :preset_name => "low fidelity beats", 
                         :html_options => { :remote => true }, 
                         form: { "data-type" => "json" } %>                        
+  </br> 
+  <%= button_to "Toms Band All Repertoire", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "toms band all repertoire", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %> 
   </br> 
   <%= button_to "Tonal Recall All Repertoire", :method => :get, :controller => "presets",
                         :action => "play_preset", :preset_name => "tonal recall all repertoire", 
