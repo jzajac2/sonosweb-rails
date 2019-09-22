@@ -56,6 +56,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # auth
 gem 'devise'
+gem 'rails_admin'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
