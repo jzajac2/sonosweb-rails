@@ -58,6 +58,11 @@
                         :html_options => { :remote => true }, 
                         form: { "data-type" => "json" } %>   
   </br>
+  <%= button_to "All The Police Albums", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "all the police albums", 
+                        :html_options => { :remote => true }, 
+                        form: { "data-type" => "json" } %> 
+  </br> 
   <%= button_to "All Chris Isaak Albums", :method => :get, :controller => "presets",
                         :action => "play_preset", :preset_name => "all chris isaak albums", 
                         :html_options => { :remote => true }, 
@@ -124,8 +129,9 @@
                         :html_options => { :remote => true }, 
                         form: { "data-type" => "json" } %>                        
   </br> 
-  <%= button_to "Toms Band All Repertoire", :method => :get, :controller => "presets",
-                        :action => "play_preset", :preset_name => "toms band all repertoire", 
+   
+  <%= button_to "Toms Band All Songs", :method => :get, :controller => "presets",
+                        :action => "play_preset", :preset_name => "toms band all songs", 
                         :html_options => { :remote => true }, 
                         form: { "data-type" => "json" } %> 
   </br> 
